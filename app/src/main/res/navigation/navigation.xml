@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/contactsListFragment">
+
+    <fragment
+        android:id="@+id/contactsListFragment"
+        android:name="com.aishwaryakamal.contactspro.ui.contactsList.ContactsListFragment"
+        android:label="ContactsListFragment"
+        tools:layout="@layout/fragment_contacts_list">
+        <action
+            android:id="@+id/action_contactsListFragment_to_addContactFragment"
+            app:destination="@id/addContactFragment" >
+            <argument
+                android:defaultValue="-1"
+                android:name="id"/>
+        </action>
+        <action
+            android:id="@+id/action_contactsListFragment_to_contactDetailsFragment"
+            app:destination="@id/contactDetailsFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/addContactFragment"
+        android:name="com.aishwaryakamal.contactspro.ui.addContact.AddContactFragment"
+        android:label="AddContactFragment"
+        tools:layout="@layout/fragment_add_contact" >
+        <action
+            android:id="@+id/action_addContactFragment_to_contactsFragment"
+            app:destination="@id/contactsListFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/contactDetailsFragment"
+        android:name="com.aishwaryakamal.contactspro.ui.contactDetails.ContactDetailsFragment"
+        android:label="ContactDetailsFragment"
+        tools:layout="@layout/fragment_contact_details">
+        <action
+            android:id="@+id/action_contactDetailsFragment_to_addContactFragment"
+            app:destination="@id/addContactFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer"/>
+        <action
+            android:id="@+id/action_contactDetailsFragment_to_contactsListFragment"
+            app:destination="@id/contactsListFragment" />
+    </fragment>
+</navigation>
