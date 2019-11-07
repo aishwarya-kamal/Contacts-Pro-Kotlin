@@ -1,4 +1,4 @@
-package com.aishwaryakamal.contactspro.ui
+package com.aishwaryakamal.contactspro.bindingAdapter
 
 import android.widget.ImageView
 import androidx.core.net.toUri

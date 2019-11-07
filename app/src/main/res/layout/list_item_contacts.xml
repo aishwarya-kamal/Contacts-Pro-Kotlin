@@ -25,9 +25,9 @@
         app:cardElevation="20dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:onClick="@{() -> contactClickListener.onClick(contact)}"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> contactClickListener.onClick(contact)}">
 
             <ImageView
                 android:id="@+id/profilePictureImageView"
@@ -47,7 +47,7 @@
                 android:id="@+id/firstName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="14dp"
+                android:layout_marginStart="9dp"
                 android:maxLines="1"
                 android:text="@{contact.firstName}"
                 android:textColor="#E4000000"
@@ -68,13 +68,13 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/firstName"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="@tools:sample/last_names"  />
+                tools:text="@tools:sample/last_names" />
 
             <ImageButton
                 android:id="@+id/emailImageButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
+                android:layout_width="28dp"
+                android:layout_height="31dp"
+                android:layout_marginEnd="12dp"
                 android:backgroundTint="@color/cardview_light_background"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -83,9 +83,9 @@
 
             <ImageButton
                 android:id="@+id/phoneImageButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="4dp"
+                android:layout_width="27dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="16dp"
                 android:backgroundTint="@color/cardview_light_background"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/emailImageButton"

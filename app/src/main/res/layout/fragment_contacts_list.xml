@@ -28,7 +28,7 @@
             android:layout_margin="16dp"
             android:backgroundTint="@color/colorAccent"
             android:src="@drawable/ic_add_black_24dp"
-            android:tint="#FFFFFF"
+            app:tint="#FFFFFF"
             app:elevation="10dp" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

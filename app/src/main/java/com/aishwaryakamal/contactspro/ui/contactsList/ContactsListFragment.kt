@@ -11,11 +11,13 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.navOptions
 import com.aishwaryakamal.contactspro.MainActivity
 
 import com.aishwaryakamal.contactspro.R
 import com.aishwaryakamal.contactspro.databinding.FragmentContactsListBinding
 import com.aishwaryakamal.contactspro.di.ViewModelProviderFactory
+import com.aishwaryakamal.contactspro.util.OPTIONS
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 
@@ -36,7 +38,7 @@ class ContactsListFragment : DaggerFragment() {
 
         viewModel = ViewModelProviders.of(this, viewModelProviderFactory).get(ContactsListViewModel::class.java)
 
-        val adapter = ContactsAdapter(ContactsClickListener {
+        val adapter = ContactsAdapter(context!!, ContactsClickListener {
             val id = it.id
             this.findNavController().navigate(ContactsListFragmentDirections
                 .actionContactsListFragmentToContactDetailsFragment(id))
@@ -47,7 +49,7 @@ class ContactsListFragment : DaggerFragment() {
         subscribeUI(adapter)
 
         binding.fab.setOnClickListener {
-            it.findNavController().navigate(R.id.action_contactsListFragment_to_addContactFragment)
+            it.findNavController().navigate(R.id.action_contactsListFragment_to_addContactFragment, null, OPTIONS)
         }
 
         return binding.root
